@@ -1,0 +1,7 @@
+AddRemoveWidget
+
+Copyright (c) 2005 Martin Aspeli <optilude@gmx.net>
+
+Released under the GNU Lesser General Public License (LGPL), version 2.
+
+See http://gnu.org for full details.

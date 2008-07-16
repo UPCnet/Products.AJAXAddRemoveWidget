@@ -1,0 +1,4 @@
+/**
+* Set Javascript variables for i18n usage
+*/
+var string_addremove_moveItem = '<dtml-var "translate(msgid='alert_please_select_an_item', domain='AddRemoveWidget', default='Please select an item', escape_for_js=True)">';

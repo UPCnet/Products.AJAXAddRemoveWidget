@@ -1,0 +1,58 @@
+# AddRemoveWidget
+# Radim Novotny <radim.novotny@corenet.cz>, 2006
+msgid ""
+msgstr ""
+"Project-Id-Version: AddRemoveWidget\n"
+"POT-Creation-Date: 2006-11-08 10:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: AddRemoveWidget\n"
+
+#. Default: "Add "
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "button_add_item"
+msgstr ""
+
+#. Default: " Add New "
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "button_add_new_item"
+msgstr ""
+
+#. Default: " Remove"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "button_remove_item"
+msgstr ""
+
+#. Default: "Available:"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "label_available_items"
+msgstr ""
+
+#. Default: "New value:"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "label_new_item_value"
+msgstr ""
+
+#. Default: "Other:"
+#: ../skins/AddRemoveWidget/widget_combobox.pt
+msgid "label_other"
+msgstr ""
+
+#. Default: "Selected:"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "label_selected_items"
+msgstr ""
+
+#. Default: "Please select an item"
+#: ../skins/AddRemoveWidget/widget_addremove_vars.js
+msgid "alert_please_select_an_item"
+msgstr ""
+

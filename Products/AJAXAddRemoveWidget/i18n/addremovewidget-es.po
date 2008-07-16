@@ -1,0 +1,57 @@
+# translation of addremovewidget-es.po to
+# Enrique Pérez, <eperez@yaco.es> 2008.
+# AddRemoveWidget
+msgid ""
+msgstr ""
+"Project-Id-Version: addremovewidget-es\n"
+"POT-Creation-Date: 2006-11-08 10:01+0000\n"
+"PO-Revision-Date: 2007-06-29 07:15+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: AddRemoveWidget\n"
+
+#. Default: "Add "
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "button_add_item"
+msgstr "Añadir"
+
+#. Default: " Add New "
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "button_add_new_item"
+msgstr "Añadir nuevo"
+
+#. Default: " Remove"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "button_remove_item"
+msgstr "Eliminar"
+
+#. Default: "Available:"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "label_available_items"
+msgstr "Disponible:"
+
+#. Default: "New value:"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "label_new_item_value"
+msgstr "Nuevo valor:"
+
+#. Default: "Other:"
+#: ../skins/AddRemoveWidget/widget_combobox.pt
+msgid "label_other"
+msgstr "Otro:"
+
+#. Default: "Selected:"
+#: ../skins/AddRemoveWidget/widget_addremove.pt
+msgid "label_selected_items"
+msgstr "Seleccionado:"
+
+#. Default: "Please select an item"
+#: ../skins/AddRemoveWidget/widget_addremove_vars.js
+msgid "alert_please_select_an_item"
+msgstr "Por favor, selecciona un elemento"
+
