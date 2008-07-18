@@ -3,11 +3,34 @@
  */
  
 
-function populate(field) {
-        var inputBox   = document.getElementById(field + "_search");
-        var targetList = document.getElementById(field + "_unselected");
-	
-	_addremove_addToList(targetList, inputBox.value, inputBox.value)
+function populate(base_url,field) {
+     var inputBox   = document.getElementById(field + "_search");
+     var targetList = document.getElementById(field + "_unselected");
+  	
+     url = base_url+"/ajaxaddremove-"+field+"?filter="+inputBox.value;
+     var xmlhttp = new XMLHttpRequest();
+     xmlhttp.open("GET", url, false);
+     xmlhttp.send('');
+     if (window.ActiveXObject) 
+	 {
+	 var parser=new DOMParser();
+	 var doc=parser.parseFromString(xmlhttp.responseText,"text/xml");
+	 x = doc.documentElement;
+	 items = x.getElementsByTagName('option');
+	 }
+     else
+	 {
+	 xml = xmlhttp.responseXML;
+	 items = xml.getElementsByTagName('option');
+	 }
+     count = items.length;
+     targetList.length=0;
+     if (count > 0)
+        for (var i=1;i<=count;i++)
+          {
+           _addremove_addToList(targetList, items[i-1].getAttribute("value"), items[i-1].getAttribute("text")) 
+          }  	
+
 }
 
 // add input from an inputbox

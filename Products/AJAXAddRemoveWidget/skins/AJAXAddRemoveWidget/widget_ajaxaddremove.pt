@@ -76,7 +76,7 @@
                     <span class="formHelp" i18n:translate="label_search">Search: </span>
                     <input type="text" id=""
                                tal:attributes="id searchBox;
-			                       onkeyup string:populate('${fieldName}')"/>
+			                       onkeyup string:populate('${here_url}','${fieldName}')"/>
                 </div>
             </td>
             </tr>
