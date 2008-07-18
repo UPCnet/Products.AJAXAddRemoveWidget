@@ -1,7 +1,7 @@
 from StringIO import StringIO
 from Products.Archetypes.Extensions.utils import install_subskin
 
-from Products.AddRemoveWidget.config import *
+from Products.AJAXAddRemoveWidget.config import *
 
 def install(self):
     out = StringIO()

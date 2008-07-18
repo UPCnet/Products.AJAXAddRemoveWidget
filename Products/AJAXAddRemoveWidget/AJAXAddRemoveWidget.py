@@ -31,8 +31,8 @@ class AJAXAddRemoveWidget(TypesWidget):
     """
 
     _properties = TypesWidget._properties.copy()
-    _properties.update({    'macro'              : 'widget_addremove',
-                            'helper_js'         : ('widget_addremove_vars.js','widget_addremove.js',),
+    _properties.update({    'macro'              : 'widget_ajaxaddremove',
+                            'helper_js'         : ('widget_ajaxaddremove_vars.js','widget_ajaxaddremove.js',),
                             
                             # Only some roles can add new items?
                             'role_based_add'    : 0,
@@ -48,7 +48,7 @@ class AJAXAddRemoveWidget(TypesWidget):
                             # Size (num items) and width (measurement) of boxes
                             # Set width_absolute to 1 make width be fixed; else
                             #  it defines the min-width only.
-                            'size'              : '7',
+                            'size'              : '9',
                             'width'             : '10em',
                             'width_absolute'    : 0,
                          },)

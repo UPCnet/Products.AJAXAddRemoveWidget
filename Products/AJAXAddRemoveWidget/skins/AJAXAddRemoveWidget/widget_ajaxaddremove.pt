@@ -32,7 +32,7 @@
             width_absolute  - Whether the width is absolute or min-width (default false)
             
          and then include the macro add_remove_box. Be sure to include
-         widget_addremove.js as well.
+         widget_ajaxaddremove.js as well.
       -->
     <metal:define define-macro="edit">
       <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
@@ -65,10 +65,22 @@
                             selectedItems  python:request.get(fieldName, value);
                             fromBox        string:${fieldName}_unselected; 
                             toBox          string:${fieldName}_selected;
-                            addBox         string:${fieldName}_new;
+                            searchBox      string:${fieldName}_search;
                             widthSpec      python:test(width_absolute, 'width', 'min-width')">
                                 
             <table cellpadding="2" cellspacing="2">
+            <!-- Search Input -->
+            <tr>
+            <td align="right" valign="top" colspan="2">
+                <div style="margin-top: 1em; margin-right: 1em">
+                    <span class="formHelp" i18n:translate="label_search">Search: </span>
+                    <input type="text" id=""
+                               tal:attributes="id searchBox;
+			                       onkeyup string:populate('${fieldName}')"/>
+                </div>
+            </td>
+            </tr>
+
             <tr>
             <!-- From box --> 
             <td valign="top" style=""
@@ -138,26 +150,6 @@
             </td>
             </tr>
 
-            <!-- Add button -->
-            <tr tal:condition="allowAdd">
-            <td align="right" valign="top" colspan="2">
-                <div style="margin-top: 1em; margin-right: 1em">
-                    <span class="formHelp"  i18n:translate="label_new_item_value">New Value: </span>
-                    <input type="text" id=""
-                               tal:attributes="id addBox"/>
-                </div>
-            </td>
-            <td align="center" valign="middle">
-                <div style="margin-top: 1em">
-                    <input type="button" value="&gt; Add New Value"
-                           style="width: 100%; margin: 0"
-                           onClick=""
-                           i18n:attributes="value button_add_new_item;"
-                           tal:attributes="tabindex tabindex/next;
-                                           onClick  string:addremove_addNewItem('${fieldName}')"/>
-                </div>
-            </td>
-            </tr>
 
             </table>
             
@@ -175,7 +167,7 @@
     </metal:define>
 
     <div metal:define-macro="search">
-      <div metal:use-macro="here/widget_addremove/macros/edit">
+      <div metal:use-macro="here/widget_ajaxaddremove/macros/edit">
       </div>
     </div>
 

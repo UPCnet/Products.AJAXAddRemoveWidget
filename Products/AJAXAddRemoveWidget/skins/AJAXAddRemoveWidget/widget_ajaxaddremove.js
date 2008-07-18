@@ -3,6 +3,13 @@
  */
  
 
+function populate(field) {
+        var inputBox   = document.getElementById(field + "_search");
+        var targetList = document.getElementById(field + "_unselected");
+	
+	_addremove_addToList(targetList, inputBox.value, inputBox.value)
+}
+
 // add input from an inputbox
 function addremove_addNewItem(field) {
 
