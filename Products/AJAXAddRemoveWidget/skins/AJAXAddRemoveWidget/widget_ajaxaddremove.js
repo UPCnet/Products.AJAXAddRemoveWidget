@@ -4,9 +4,11 @@
  
 
 function populate(base_url,field) {
-     var inputBox   = document.getElementById(field + "_search");
-     var targetList = document.getElementById(field + "_unselected");
-  	
+ var inputBox   = document.getElementById(field + "_search");
+ var targetList = document.getElementById(field + "_unselected");
+ 
+ if (inputBox.value.length>=2)
+    {
      url = base_url+"/ajaxaddremove-"+field+"?filter="+inputBox.value;
      var xmlhttp = new XMLHttpRequest();
      xmlhttp.open("GET", url, false);
@@ -30,7 +32,7 @@ function populate(base_url,field) {
           {
            _addremove_addToList(targetList, items[i-1].getAttribute("value"), items[i-1].getAttribute("text")) 
           }  	
-
+    }
 }
 
 // add input from an inputbox
