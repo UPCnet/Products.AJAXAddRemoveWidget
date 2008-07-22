@@ -71,12 +71,15 @@
             <table cellpadding="2" cellspacing="2">
             <!-- Search Input -->
             <tr>
-            <td align="right" valign="top" colspan="2">
+            <td colspan="3" align="left" valign="top" colspan="2">
                 <div style="margin-top: 1em; margin-right: 1em">
                     <span class="formHelp" i18n:translate="label_search">Search: </span>
+                    
                     <input type="text" id=""
                                tal:attributes="id searchBox;
 			                       onkeyup string:populate('${here_url}','${fieldName}')"/>
+		    <img tal:attributes="id string:${fieldName}_spinner" style="display:none;" src="spinner.gif"/>                       
+		    <span tal:attributes="id string:${fieldName}_error_label"></span>
                 </div>
             </td>
             </tr>

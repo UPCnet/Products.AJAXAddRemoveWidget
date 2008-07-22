@@ -1,4 +1,4 @@
-/*
+/*_addremove_updateSubmitField
  * Helper javascript function for addremove widget;
  */
  
@@ -6,8 +6,11 @@
 function populate(base_url,field) {
  var inputBox   = document.getElementById(field + "_search");
  var targetList = document.getElementById(field + "_unselected");
+ var errorLabel = document.getElementById(field + "_error_label");
+ var spinner = document.getElementById(field + "_spinner");
  
- if (inputBox.value.length>=2)
+spinner.style.display='';
+ if (inputBox.value.length>=4)
     {
      url = base_url+"/ajaxaddremove-"+field+"?filter="+inputBox.value;
      var xmlhttp = new XMLHttpRequest();
@@ -17,23 +20,64 @@ function populate(base_url,field) {
 	 {
 	 var parser=new DOMParser();
 	 var doc=parser.parseFromString(xmlhttp.responseText,"text/xml");
-	 x = doc.documentElement;
-	 items = x.getElementsByTagName('option');
+	 xml = doc.documentElement;
+	 
 	 }
      else
 	 {
 	 xml = xmlhttp.responseXML;
-	 items = xml.getElementsByTagName('option');
 	 }
+     spinner.style.display='none'; 
+     items = xml.getElementsByTagName('option');
      count = items.length;
-     targetList.length=0;
+
      if (count > 0)
+       {
+        targetList.length=0;       
         for (var i=1;i<=count;i++)
           {
-           _addremove_addToList(targetList, items[i-1].getAttribute("value"), items[i-1].getAttribute("text")) 
-          }  	
+          if (!check_item_exists(field,items[i-1].getAttribute("value")))
+             {
+	      	newIdx = targetList.length;      
+	  	targetList[newIdx]       = new Option(items[i-1].getAttribute("text"));
+	  	targetList[newIdx].value = items[i-1].getAttribute("value")
+
+             }
+          }
+  	  errorLabel.textContent=count+' Resultats' 
+       }
+     else
+       {
+         item = xml.getElementsByTagName('error')
+         count = item.length;
+         if (count==1)
+           {
+              errorLabel.textContent=item[0].getAttribute("message")
+           }
+       }  
+
     }
+    else
+{       errorLabel.textContent="Escriu 4 caràcters com a mínim" 	    }
+ spinner.style.display='none'; 
 }
+
+
+
+// update the hidden field we use to actually submit the values as a pipe-
+//  separated list
+function check_item_exists(field,item) {
+
+	var submitContainer  = document.getElementById(field + "_container");
+
+	for (var i = 0; i < submitContainer.childNodes.length; ++i) {
+           if (submitContainer.childNodes[i].value==item)	    
+              {return true}
+        return false 
+	}
+	
+}
+
 
 // add input from an inputbox
 function addremove_addNewItem(field) {
