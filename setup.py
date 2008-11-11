@@ -26,6 +26,7 @@ setup(name='Products.AJAXAddRemoveWidget',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'Products.AJAXAddRemoveWidget',
       ],
       entry_points="""
       # -*- Entry points: -*-

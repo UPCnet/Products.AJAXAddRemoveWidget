@@ -31,6 +31,10 @@ Products/AJAXAddRemoveWidget/i18n/addremovewidget-es.po
 Products/AJAXAddRemoveWidget/i18n/addremovewidget-fr.po
 Products/AJAXAddRemoveWidget/i18n/addremovewidget-nl.po
 Products/AJAXAddRemoveWidget/i18n/addremovewidget.pot
-Products/AJAXAddRemoveWidget/skins/AddRemoveWidget/widget_ajaxaddremove.js
-Products/AJAXAddRemoveWidget/skins/AddRemoveWidget/widget_ajaxaddremove.pt
-Products/AJAXAddRemoveWidget/skins/AddRemoveWidget/widget_ajaxaddremove_vars.js.dtml
+Products/AJAXAddRemoveWidget/skins/AJAXAddRemoveWidget/widget_ajaxaddremove.js
+Products/AJAXAddRemoveWidget/skins/AJAXAddRemoveWidget/widget_ajaxaddremove.pt
+Products/AJAXAddRemoveWidget/skins/AJAXAddRemoveWidget/widget_ajaxaddremove_vars.js.dtml
+docs/HISTORY.txt
+docs/INSTALL.txt
+docs/LICENSE.GPL
+docs/LICENSE.txt
