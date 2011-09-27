@@ -1,0 +1,20 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           xmlns:cmf="http://namespaces.zope.org/cmf"
+           i18n_domain="AJAXAddRemoveWidget">
+
+  <cmf:registerDirectory name="AJAXAddRemoveWidget"/>
+
+  <genericsetup:registerProfile
+      name="default"
+      title="AJAXAddRemoveWidget"
+      directory="profiles/default"
+      description="Profile for AJAXAddRemoveWidget"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+ 
+  <i18n:registerTranslations directory="locales" />
+
+</configure>

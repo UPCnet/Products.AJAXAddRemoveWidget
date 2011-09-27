@@ -13,7 +13,7 @@ msgstr ""
 "Language-Code: es\n"
 "Language-Name: Español\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: AddRemoveWidget\n"
+"Domain: AJAXAddRemoveWidget\n"
 
 #. Default: "Add "
 #: ../skins/AddRemoveWidget/widget_addremove.pt

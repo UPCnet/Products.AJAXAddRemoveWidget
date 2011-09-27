@@ -2,7 +2,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="AddRemoveWidget">
+      i18n:domain="AJAXAddRemoveWidget">
   <head><title></title></head>
   <body>
 
@@ -46,7 +46,7 @@
                             size           widget/size;
                             
                             isKWfield      python:widget.is_keyword_field(field,widget.vocab_source) and not vocabulary;
-                            indexKWs       python:isKWfield and widget.makeDL(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeDL([]);
+                            indexKWs       python:isKWfield and widget.makeVocab(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeVocab([]);
                             vocabulary     python:indexKWs + vocabulary;
                             
                             roleBasedAdd   widget/role_based_add;
