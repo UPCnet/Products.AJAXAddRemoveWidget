@@ -4,7 +4,7 @@
 
 from Products.Archetypes.Widget import TypesWidget
 from Products.Archetypes.Registry import registerWidget
-from Products.Archetypes.atapi import DisplayList
+from Products.Archetypes.atapi import Vocabulary, DisplayList
 
 from Products.CMFCore.utils import getToolByName
 
@@ -74,14 +74,14 @@ class AJAXAddRemoveWidget(TypesWidget):
                     idx.meta_type == 'KeywordIndex' ]
         return filtered != []
     
-    def makeDL(self,list):
+    def makeVocab(self,list):
         """Takes in a list (of keywords) and returns a display list that
         is expected by the Vocabulary machinery.
         """
         dl = DisplayList()
         for i in list:
             dl.add(i,i)
-        return dl
+        return Vocabulary(dl, None, None)
 
 registerWidget(AJAXAddRemoveWidget,
                 title = 'Add/Remove widget',

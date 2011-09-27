@@ -38,14 +38,14 @@
       <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
         <metal:widgetBody fill-slot="widget_body"
                 tal:define="value          python:edit_accessor();
-                            vocabulary     python:field.Vocabulary(here);
+                            vocabulary     python:field.Vocabulary(context);
                             allowAdd       not:field/enforceVocabulary;
                             
                             width          widget/width;
                             width_absolute widget/width_absolute;
                             size           widget/size;
                             
-                            isKWfield      python:widget.is_keyword_field(field,widget.vocab_source);
+                            isKWfield      python:widget.is_keyword_field(field,widget.vocab_source) and not vocabulary;
                             indexKWs       python:isKWfield and widget.makeDL(context.collectKeywords(fieldName, field.accessor, widget.vocab_source )) or widget.makeDL([]);
                             vocabulary     python:indexKWs + vocabulary;
                             
@@ -61,7 +61,7 @@
                             width          width          | string:10em;
                             size           size           | string:7;
                             width_absolute width_absolute | python:False; 
-                            
+                            here_url       context/@@plone_context_state/object_url;
                             selectedItems  python:request.get(fieldName, value);
                             fromBox        string:${fieldName}_unselected; 
                             toBox          string:${fieldName}_selected;
@@ -100,7 +100,7 @@
                         tal:attributes="id          fromBox;
                                         name        fromBox;
                                         style       string:${widthSpec}:${width};
-                                        tabindex    tabindex/next;
+                        
                                         size        size;
                                         onDblClick  string:addremove_addItem('${fieldName}')">
                   <tal:block repeat="item vocabulary/keys">
@@ -118,12 +118,12 @@
                 <input type="button" value="Add &gt;"
                        style="width: 100%;" onClick=""
                        i18n:attributes="value button_add_item;"
-                       tal:attributes="tabindex tabindex/next;
+                       tal:attributes="
                                     onClick  string:addremove_addItem('${fieldName}')"/><br/>
                 <input type="button" value="&lt; Remove"
                        style="width: 100%; margin: 0"
                        i18n:attributes="value button_remove_item;"
-                       tal:attributes="tabindex tabindex/next;
+                       tal:attributes="
                                        onClick  string:addremove_removeItem('${fieldName}')"/>
             </td>
             <!-- To box -->
@@ -141,7 +141,7 @@
                         tal:attributes="id       toBox;
                                         name     toBox;
                                         style    string:${widthSpec}:${width};
-                                        tabindex tabindex/next;
+                                        
                                         size     size;
                                         onDblClick  string:addremove_removeItem('${fieldName}')">
                   <option value="#"
