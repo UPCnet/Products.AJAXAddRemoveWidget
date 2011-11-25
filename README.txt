@@ -1,4 +1,4 @@
-Introduction
+Introducció
 ============
 
-
+Producte de widget.
